@@ -10,7 +10,8 @@
   --pink: #e02c6d;
   --white: #fff;
   --blackish: #18191f;
-  --orange: #FB8200;
+  --orange: #fb8200;
+  --font-family: "Inter";
 }
 header {
   padding: 90px 120px 50px 120px;
@@ -21,9 +22,10 @@ nav {
   align-items: center;
 }
 .nav-left {
-  font-size: 1.5rem;
+  font-size: 1.7rem;
   color: var(--grey);
   font-weight: 700;
+  cursor: pointer;
 }
 .nav-right {
   display: flex;
@@ -55,7 +57,7 @@ nav {
   font-weight: 700;
 }
 .banner-description {
-  width: 31.5rem;
+  max-width: 31.5rem;
   color: var(--grey);
 }
 .btn1 {
@@ -63,19 +65,37 @@ nav {
   background-color: var(--pink);
   font-size: 1rem;
   font-weight: 700;
-  border-radius: 15px;
-  padding: 5px 15px;
+  letter-spacing: 1px;
+  border-radius: 25px;
+  padding: 10px 20px;
   margin-top: 10px;
   border: hidden;
+  cursor: pointer;
+  
+}
+.btn1:hover {
+  color: var(--pink);
+  background-color: var(--white);
+  border: 2px solid var(--pink);
+  padding: 8px 18px;
 }
 .banner-img {
-  right: 0;
   background: url("/images/Circle\ design.svg");
+  background-position: center;
   background-repeat: no-repeat;
+}
+.banner-img img {
+  width: 100%;
+}
+.banner-img:hover {
+  transform: scale(1.2);
+  transition: transform 1s ease-in-out;
 }
 .platform {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
+  align-items: center;
   margin-top: 100px;
   padding: 1rem;
   border: 1px solid;
@@ -89,8 +109,8 @@ nav {
   border-right: 0;
   border-image-slice: 1;
 }
-.platform img {
-  width: 10rem;
+.platform img{
+ cursor: pointer;
 }
 /* Popular section */
 .popular {
@@ -113,17 +133,18 @@ nav {
   padding: 15px;
   border-radius: 5px;
   box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.15);
-  
+}
+.products:hover {
+  transform: scale(1.05);
+  transition: transform 0.5s ease;
 }
 .product-title {
-  font-size: 1.75rem;
+  font-size: 1.2rem;
   color: var(--blackish);
-  font-weight: 500;
 }
 .product-price {
   font-size: 1.25rem;
-  font-family: 'Inter';
-  font-weight: 400;
+  font-family: "Inter", sans-serif;
   color: rgba(0, 0, 0, 0.87);
 }
 .product-details {
@@ -135,18 +156,18 @@ nav {
   width: 100%;
   margin: auto;
 }
-.product-rating{
+.product-rating {
   color: var(--orange);
   display: flex;
   align-items: baseline;
   gap: 5px;
   margin-bottom: 10px;
 }
-.product-rating p{
-  color: #5E6366;
-  font-size: 1.1rem ;
+.product-rating p {
+  color: #5e6366;
+  font-size: 1.1rem;
 }
-.see-more{
+.see-more {
   color: var(--pink);
   text-align: right;
   font-size: 1rem;
@@ -154,57 +175,94 @@ nav {
   margin: 50px 100px 0px;
 }
 /* featured section */
-.featured{
+.featured {
   margin: 100px 165px 50px 165px;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
 }
-.featured img{
+.featured img {
   height: 50%;
   border-radius: 7px;
 }
-.featured-content{
+.featured-content {
   font-size: 2rem;
   max-width: 800px;
 }
-.featured-description{
+.featured-description {
   font-size: 1rem;
-  color: #6C6C6C;
+  color: #6c6c6c;
   font-weight: 700;
   line-height: 1.75rem;
   max-width: 500px;
   margin: 10px 0px;
 }
-.btn2{
+.btn2 {
   color: var(--white);
   background-color: var(--pink);
   padding: 10px 25px;
   border: hidden;
   font-weight: 700;
 }
+.btn2:hover {
+  color: var(--pink);
+  background-color: var(--white);
+  border: 2px solid var(--pink);
+  padding: 8px 23px;
+}
 /* footer section */
-footer{
+footer {
   margin-top: 50px;
-  background:  #0A0826;
+  background: #0a0826;
   color: var(--white);
   text-align: center;
   padding: 50px 0px;
 }
-.footer-title{
+.footer-title {
   font-size: 1.5rem;
   font-weight: 700;
 }
-.footer-description{
-  font-size: .8rem;
-  font-family: 'Manrope';
+.footer-description {
+  font-size: 0.8rem;
+  font-family: "Manrope";
   font-weight: 700;
   line-height: 1.5rem;
   margin: 15px 0px;
 }
-.footer-icons i{
-  border: 10px solid rgba(194, 176, 176,.2);
+.footer-icons i {
+  border: 10px solid rgba(194, 176, 176, 0.2);
   border-radius: 50%;
   margin-bottom: 20px;
 }
-
+.hide {
+  display: none;
+}
+/* Mobile Devices */
+@media screen and (max-width: 576px) {
+  header {
+    padding: 15px;
+    text-align: center;
+  }
+  nav,
+  .nav-right {
+    flex-direction: column;
+    gap: 10px;
+    font-size: 1rem;
+  }
+  .banner {
+    flex-direction: column-reverse;
+    text-align: center;
+    font-size: 1.2rem;
+    margin: 0px;
+  }
+  .banner-img {
+  }
+  .platform {
+    margin: auto;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .platform img {
+    padding: 10px;
+  }
+}
