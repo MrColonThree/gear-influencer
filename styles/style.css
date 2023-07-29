@@ -18,6 +18,9 @@
 header {
   padding: 30px 120px 50px 120px;
 }
+.only-mobile{
+  display: none;
+}
 nav {
   display: flex;
   justify-content: space-between;
@@ -147,7 +150,7 @@ nav {
 }
 .products:hover {
   transform: scale(1.05);
-  transition: transform 0.5s ease;
+  transition: transform 0.5s ease-in-out;
 }
 .products img {
   width: 100%;
@@ -256,14 +259,18 @@ footer {
     padding: 15px;
     text-align: center;
   }
-  nav,
-  .nav-right{
-    flex-direction: column;
-    gap: 10px;
-    font-size: 1rem;
-    text-align: center;
+  .only-mobile{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
-  .nav-right{
+  .only-mobile a{
+    color: var(--grey);
+  }
+  .only-mobile a:hover{
+    color: var(--pink);
+  }
+  nav{
     display: none;
   }
   .banner,
